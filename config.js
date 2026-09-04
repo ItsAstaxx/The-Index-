@@ -9,7 +9,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_PIZHh6XUZas5Q9-G0jcclQ_7Jj8YA7k";
 // The shelves (categories) sites can be filed under.
 // id = stored in the database, label = shown in the UI.
 const CATEGORIES = [
-  { id: "tools",     label: "Tools" },
+  { id: "tools",     label: "Manga" },
   { id: "learning",  label: "Learning" },
   { id: "design",    label: "Design" },
   { id: "dev",       label: "Dev" },
