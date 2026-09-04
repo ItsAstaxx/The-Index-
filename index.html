@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Index — a catalog of the web</title>
+<meta name="description" content="A community-built index of websites, organized by shelf. Search it, browse it, add to it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a href="#" class="wordmark">The Index</a>
+    <nav class="head-nav">
+      <button class="head-link is-active" data-view="catalog">Catalog</button>
+      <button class="head-link" data-view="wall">The Wall</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== CATALOG VIEW ===================== -->
+  <section id="view-catalog" class="view">
+
+    <div class="wrap intro">
+      <h1 class="intro-title">A catalog of the web,<br>kept by the people who use it.</h1>
+      <p class="intro-sub">Every entry below was added by someone who found it worth keeping. No algorithm, no ads — just a shelf.</p>
+
+      <div class="search-row">
+        <span class="search-ix">ƒ</span>
+        <input id="search" type="text" placeholder="search the index — try “design tools” or a site name" autocomplete="off">
+        <span id="search-count" class="search-count"></span>
+      </div>
+
+      <p class="stat-line" id="stat-line">— loading catalog —</p>
+    </div>
+
+    <div class="wrap shelf-tabs" id="shelf-tabs">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="wrap ledger" id="ledger">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="wrap suggest-row">
+      <button id="open-submit" class="ghost-btn">+ suggest a site for the index</button>
+    </div>
+
+  </section>
+
+  <!-- ===================== WALL VIEW ===================== -->
+  <section id="view-wall" class="view is-hidden">
+    <div class="wrap intro">
+      <h1 class="intro-title">The Wall.</h1>
+      <p class="intro-sub">Anonymous notes from whoever's passing through. No account, no name — just say the thing.</p>
+    </div>
+
+    <div class="wrap wall-compose">
+      <textarea id="whisper-text" maxlength="280" placeholder="leave a note..."></textarea>
+      <div class="wall-compose-row">
+        <span id="whisper-count" class="whisper-count">280</span>
+        <button id="whisper-send" class="solid-btn">Pin it</button>
+      </div>
+    </div>
+
+    <div class="wrap wall-feed" id="wall-feed">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <span>The Index — built and kept in the open.</span>
+    <a href="https://github.com/" target="_blank" rel="noopener" id="footer-github-link">Source on GitHub</a>
+  </div>
+</footer>
+
+<!-- ===================== SUBMIT MODAL ===================== -->
+<div id="submit-modal" class="modal-backdrop is-hidden">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2>Suggest a site</h2>
+      <button id="close-submit" class="icon-btn" aria-label="Close">×</button>
+    </div>
+    <p class="modal-sub">Goes to the review shelf first. If it fits, it gets filed.</p>
+    <form id="submit-form">
+      <label>Name
+        <input type="text" id="f-name" required maxlength="60" placeholder="e.g. Are.na">
+      </label>
+      <label>URL
+        <input type="url" id="f-url" required placeholder="https://">
+      </label>
+      <label>Shelf
+        <select id="f-category" required></select>
+      </label>
+      <label>One line, why it belongs
+        <input type="text" id="f-desc" required maxlength="120" placeholder="What makes this worth keeping?">
+      </label>
+      <button type="submit" class="solid-btn full">Submit for review</button>
+      <p id="submit-status" class="submit-status"></p>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
