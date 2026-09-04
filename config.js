@@ -3,8 +3,8 @@
 // Fill these in after you set up Supabase (see README.md).
 // ============================================================
 
-const SUPABASE_URL = "https://YOUR-PROJECT.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR-ANON-PUBLIC-KEY";
+const SUPABASE_URL = "https://cyubnegisgftxthtoxyw.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_PIZHh6XUZas5Q9-G0jcclQ_7Jj8YA7k";
 
 // The shelves (categories) sites can be filed under.
 // id = stored in the database, label = shown in the UI.
