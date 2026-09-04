@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Index — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a href="index.html" class="wordmark">The Index</a>
+    <span class="admin-badge">admin</span>
+  </div>
+</header>
+
+<main class="wrap admin-wrap">
+
+  <!-- ===================== LOGIN ===================== -->
+  <section id="login-view">
+    <h1 class="intro-title" style="font-size:26px;margin-top:40px;">Sign in</h1>
+    <form id="login-form" class="admin-form">
+      <label>Email
+        <input type="email" id="l-email" required autocomplete="username">
+      </label>
+      <label>Password
+        <input type="password" id="l-password" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="solid-btn full">Sign in</button>
+      <p id="login-status" class="submit-status"></p>
+    </form>
+  </section>
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <section id="dash-view" class="is-hidden">
+    <div class="admin-top">
+      <p class="admin-who" id="admin-who"></p>
+      <button id="logout-btn" class="ghost-btn">Sign out</button>
+    </div>
+
+    <h2 class="admin-h2">Pending submissions <span id="pending-count" class="n-badge"></span></h2>
+    <div id="pending-list" class="admin-list"></div>
+
+    <h2 class="admin-h2">Approved sites <span id="approved-count" class="n-badge"></span></h2>
+    <div id="approved-list" class="admin-list"></div>
+
+    <h2 class="admin-h2">The Wall <span id="whisper-count-admin" class="n-badge"></span></h2>
+    <div id="whisper-list" class="admin-list"></div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
